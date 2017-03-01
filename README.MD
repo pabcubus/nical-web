@@ -1,27 +1,20 @@
 # Nical Web
-This is the repo for the Cloud Building Management System.
+Este es el repositorio para la app de Nical
 
-This project requires [Node.js (primarily NPM)](https://nodejs.org/) v4+ to run. Before running the project, you'll need to prepare the project for:
-- Global Dependencies
-- Local Dependencies
+Este proyecto requiere de tener instalado:
+- NPM (Node Package Manager)
+- Bower
+- GIT
 
-To do this, run these commands from your Terminal or CMD:
-```sh
-$ cd /local/folder/to/your/project
-$ npm run prepare-mac (or prepare-win)
-$ npm install
-$ bower install
-```
-
-After running the previous steps, to run the project simply do `grunt serve` from the Terminal or CMD, and then on your browser go to `http://localhost:3000/`.
-
-This project uses:
-- RequireJS
+Tambien usa las tecnologías:
 - AngularJS
 - Bootstrap
-- Lodash
+- UI Route para AngularJS
 
-and requires:
-- Node Package Manager (NPM)
-- Bower
-- Grunt
+Para solo preparar y correr el proyecto, se debe correr estos comandos desde la Terminal ó CMD:
+```sh
+$ git clone https://github.com/pabcubus/nical-web.git
+$ cd /folder/donde/se/clono/el/proyecto
+$ npm install
+$ bower install
+$ grunt serve
