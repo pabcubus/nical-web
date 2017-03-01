@@ -1,0 +1,72 @@
+<div class="carrito">
+	<div class="row">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-10">
+			<div class="row">
+				<div class="col-md-3" ng-repeat="prod in cc.productos">
+					<div class="panel panel-default panel-producto">
+						<div class="panel-heading">{{prod.nombre}}</div>
+						<div class="panel-body">
+							<div>
+								<img src="/prds/1.jpg" />
+							</div>
+
+							<h3><small>Precio:</small> {{prod.precio | currency:"$ ":0}}</h3>
+
+							<div class="nc-center-text">
+								<div class="form-group">
+									<label for="exampleInputEmail1">Cantidad</label>
+									<input type="number" class="form-control producto-cantidad" ng-model="prod.cantidad" ng-change="cc.recalcular()">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-1">
+		</div>
+	</div>
+
+	<div class="carrito-data">
+		<div class="row">
+			<div class="col-md-10">
+				<div class="row">
+					<div class="col-md-3">
+						<h4><small>Lo que llevas:</small> {{cc.total | currency:"$ ":0}}</h4>
+					</div>
+					<div class="col-md-3 col-md-offset-6 nc-right-text ">
+						<h4><small>Tu tope:</small> {{cc.currentTienda.presupuesto_tope | currency:"$ ":0}}</h4>
+					</div>
+				</div>
+
+				<div class="progress">
+					<div
+						class="progress-bar"
+						role="progressbar"
+						ng-class="{'progress-bar-danger': (cc.total > cc.currentTienda.presupuesto_tope)}"
+						aria-valuenow="{{cc.total}}"
+						aria-valuemin="0"
+						aria-valuemax="{{cc.currentTienda.tope}}"
+						style="width: {{cc.porcentaje}}%;">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2 control">
+				<div class="nc-padding-all">
+					<button type="button" class="btn btn-primary">
+						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						Terminar Compra
+					</button>
+				</div>
+				<div class="nc-padding-all">
+					<button type="button" class="btn btn-warning" ng-click="cc.limpiarCarrito()">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+						Limpiar Carrito
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

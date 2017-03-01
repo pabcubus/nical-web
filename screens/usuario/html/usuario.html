@@ -1,0 +1,82 @@
+<div class="usuario">
+	<div class="row">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-10">
+			<div>
+				<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modificar_usuario" ng-click="uc.setCurrentUsuario({})">
+					Nuevo Usuario
+				</button>
+			</div>
+			<table class="table table-striped table-productos">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Usuario</th>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Creacion</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="user in uc.usuarios">
+						<td>{{user.id}}</td>
+						<td>{{user.usuario}}</td>
+						<td>{{user.nombre}}</td>
+						<td>{{user.apellido}}</td>
+						<td>{{user.creacion}}</td>
+						<td>
+							<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modificar_usuario" ng-click="uc.setCurrentUsuario(user)">
+								Editar
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-1">
+		</div>
+	</div>
+
+	<!-- Modificar el producto -->
+	<div class="modal fade" id="modificar_usuario" tabindex="-1" role="dialog" aria-labelledby="modificar_usuario">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="nc-capitalize">
+						{{uc.currentUsuario.nombre}} {{uc.currentUsuario.apellido}} <small>{{uc.currentUsuario.usuario}}</small>
+					</h4>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="useruser">Usuario</label>
+							<input type="text" class="form-control" id="useruser" placeholder="Usuario" ng-model="uc.currentUsuario.usuario">
+						</div>
+						<div class="form-group">
+							<label for="usernombre">Nombre</label>
+							<input type="text" class="form-control" id="usernombre" placeholder="Nombre" ng-model="uc.currentUsuario.nombre">
+						</div>
+						<div class="form-group">
+							<label for="userapellido">Apellido</label>
+							<input type="text" class="form-control" id="userapellido" placeholder="Apellido" ng-model="uc.currentUsuario.apellido">
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" ng-model="uc.currentUsuario.puede_hacer_pedidos"> Puede hacer pedidos
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" ng-model="uc.currentUsuario.puede_hacer_pedidos_general"> Puede hacer pedidos generales
+							</label>
+						</div>
+						<button type="submit" class="btn btn-primary btn-sm" ng-click="uc.guardarUsuario()">Editar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

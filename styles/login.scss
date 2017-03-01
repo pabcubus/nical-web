@@ -1,0 +1,33 @@
+@import 'colors.scss';
+
+.login{
+	padding: 7% 0 0;
+
+
+	.login-panel{
+		width: 400px;
+		margin: 0 auto;
+		padding: 40px;
+		box-sizing: border-box;
+		background-color: white;
+		box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+		.input-group, .logo-wrapper{
+			margin: 0 0 15px;
+			width: 100%;
+		}
+
+		.logo-wrapper{
+			text-align: center;
+
+			img{
+				width: 50%;
+			}
+		}
+
+		.btn{
+			width: 100%;
+			padding: 10px 0;
+		}
+	}
+}

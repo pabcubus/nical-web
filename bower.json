@@ -1,0 +1,29 @@
+{
+	"name": "nical-web",
+	"authors": [
+		"Pablo Bassil <pabcubus@gmail.com>"
+	],
+	"description": "",
+	"main": "index.html",
+	"license": "MIT",
+	"homepage": "",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"angular": "1.6.0",
+		"ng-lodash": "^0.5.0",
+		"angular-md5": "^0.1.10",
+		"bootstrap": "^3.3.7",
+		"jquery": "^3.1.1",
+		"requirejs": "^2.3.2",
+		"eonasdan-bootstrap-datetimepicker": "^4.17.45"
+	},
+	"resolutions": {
+		"angular": "1.6.0"
+	}
+}

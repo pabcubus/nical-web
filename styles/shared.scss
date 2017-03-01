@@ -1,0 +1,130 @@
+@import 'colors.scss';
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.cb-body-wrapper {
+	min-height: 630px;
+}
+
+.nc-padding-all {
+	padding: 5px;
+}
+
+.nc-padding-vertical {
+	padding: 5px 0;
+}
+
+.nc-padding-horizontal {
+	padding: 0 5px;
+}
+
+.cb-padding-15-all {
+	padding: 15px;
+}
+
+.cb-padding-15-vertical {
+	padding: 15px 0;
+}
+
+.cb-float-right {
+	float: right;
+}
+
+.cb-block {
+	display: block;
+}
+
+.cb-inline-block {
+	display: inline-block;
+}
+
+.nc-center-text {
+	text-align: center;
+}
+
+.nc-right-text {
+	text-align: right;
+}
+
+.cb-border-bottom {
+	border-bottom: 1px solid #eee;
+}
+
+.cb-bold {
+	font-weight: bold;
+}
+
+.cb-color-white {
+	color: white;
+}
+
+.cb-color-grey {
+	color: $grey;
+}
+
+.cb-color-primary {
+	color: $primary;
+}
+
+.cb-color-error {
+	color: $alert-error;
+}
+
+.cb-color-danger {
+	color: $alert-danger;
+}
+
+.cb-color-warning {
+	color: $alert-warning;
+}
+
+.cb-color-info {
+	color: $alert-info;
+}
+
+.cb-color-success {
+	color: $alert-success;
+}
+
+.cb-back-primary {
+	background-color: $primary;
+}
+
+.nc-capitalize {
+	text-transform: capitalize;
+}
+
+.cb-break-word {
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+.cb-modal {
+	.cb-modal-xl {
+		width: 95%;
+	}
+
+	.modal-content {
+		.modal-body {
+			height: 70vh;
+			overflow: auto;
+		}
+	}
+}

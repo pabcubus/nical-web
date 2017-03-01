@@ -1,0 +1,9 @@
+<div>
+	<div ng-include="'modules/toolbar/html/toolbar.html'" ng-show="ac.logedIn"></div>
+
+	<div ng-class="{'container-fluid cb-body-wrapper':ac.logedIn}">
+		<ui-view></ui-view>
+	</div>
+
+	<!--<div ng-include="'modules/footer/html/footer.html'" ng-show="ac.logedIn"></div>-->
+</div>

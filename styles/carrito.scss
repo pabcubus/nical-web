@@ -1,0 +1,42 @@
+$carritoDataHeight: 140;
+
+.carrito {
+	position: relative;
+	margin-bottom: ($carritoDataHeight + 20) + px;
+
+	.panel-producto {
+		.panel-heading {
+			text-transform: capitalize;
+		}
+
+		.panel-body {
+			.producto-cantidad {
+				width: 30%;
+				margin: 0 auto;
+			}
+		}
+	}
+
+	.carrito-data {
+		padding: 30px;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background-color: white;
+		border-radius: 10px 10px 0 0;
+		-webkit-box-shadow: 0 15px 20px 10px black;
+		-moz-box-shadow: 0 15px 20px 10px black;
+		box-shadow: 0 15px 20px 10px black;
+
+		.control{
+			button{
+				width: 100%;
+
+				.glyphicon{
+					float: left;
+				}
+			}
+		}
+	}
+}

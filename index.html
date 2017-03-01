@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>..::: Nical :::..</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="libs/material-design-icons/material-icons.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
+
+	<link href="styles/shared.css" rel="stylesheet">
+	<link href="styles/login.css" rel="stylesheet">
+	<link href="styles/carrito.css" rel="stylesheet">
+	<link href="styles/productos.css" rel="stylesheet">
+</head>
+
+<body
+	class="main-content"
+	ng-controller="AppController as ac"
+	ng-class="{'cb-back-primary' : ac.currentPath.indexOf('login') != -1}"
+	ng-cloak>
+
+	<div ng-include="'app_frame.html'"></div>
+
+	<script type="text/javascript" data-main="main" src="bower_components/requirejs/require.js"></script>
+</body>
+
+</html>
