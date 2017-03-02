@@ -10,6 +10,12 @@ $carritoDataHeight: 140;
 		}
 
 		.panel-body {
+			.producto-image {
+				width: 80%;
+				margin: 0 auto;
+				display: block;
+			}
+
 			.producto-cantidad {
 				width: 30%;
 				margin: 0 auto;
@@ -29,11 +35,11 @@ $carritoDataHeight: 140;
 		-moz-box-shadow: 0 15px 20px 10px black;
 		box-shadow: 0 15px 20px 10px black;
 
-		.control{
-			button{
+		.control {
+			button {
 				width: 100%;
 
-				.glyphicon{
+				.glyphicon {
 					float: left;
 				}
 			}

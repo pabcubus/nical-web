@@ -9,7 +9,7 @@
 						<div class="panel-heading">{{prod.nombre}}</div>
 						<div class="panel-body">
 							<div>
-								<img src="/prds/1.jpg" />
+								<img class="producto-image" ng-src="/prds/{{prod.id}}.png" />
 							</div>
 
 							<h3><small>Precio:</small> {{prod.precio | currency:"$ ":0}}</h3>
@@ -17,7 +17,12 @@
 							<div class="nc-center-text">
 								<div class="form-group">
 									<label for="exampleInputEmail1">Cantidad</label>
-									<input type="number" class="form-control producto-cantidad" ng-model="prod.cantidad" ng-change="cc.recalcular()">
+									<input
+										type="number"
+										class="form-control producto-cantidad"
+										ng-model="prod.cantidad"
+										ng-model-options='{ debounce: 1200 }'
+										ng-change="cc.recalcular()">
 								</div>
 							</div>
 						</div>

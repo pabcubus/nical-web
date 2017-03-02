@@ -42,10 +42,13 @@
 				}
 
 				function recalcular(){
-					var valorTotal = 0;
-					vm.currentProductos = [];
+					var valorTotal		= 0;
+					vm.currentProductos	= [];
 
 					lodash.forEach(vm.productos, function(prod){
+						if (prod.cantidad < 0) 					prod.cantidad = 0;
+						if (!lodash.isInteger(prod.cantidad)) 	prod.cantidad = Math.floor(prod.cantidad);
+
 						valorTotal += (prod.precio * prod.cantidad);
 						if (prod.cantidad > 0) {
 							vm.currentProductos.push(prod);

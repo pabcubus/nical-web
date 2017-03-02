@@ -8,114 +8,289 @@
 			var ProductoService = function(lodash, $q) {
 				var vm = this;
 
-				vm.productos	= [{
-						"id": 100123,
-						"precio": 8504,
-						"nombre": "pariatur officia",
+				vm.productos = [{
+						"cantidad": 0,
 						"activo": true,
-						"cantidad": 0
+						"nombre": "dolore nulla",
+						"precio": 21786,
+						"id": 1
 					},
 					{
-						"id": 100124,
-						"precio": 15014,
-						"nombre": "magna sit",
+						"cantidad": 0,
 						"activo": true,
-						"cantidad": 0
+						"nombre": "minim duis",
+						"precio": 26537,
+						"id": 2
 					},
 					{
-						"id": 100125,
-						"precio": 10455,
-						"nombre": "Lorem qui",
+						"cantidad": 0,
 						"activo": true,
-						"cantidad": 0
+						"nombre": "laborum proident",
+						"precio": 19127,
+						"id": 3
 					},
 					{
-						"id": 100126,
-						"precio": 5613,
-						"nombre": "laboris commodo",
+						"cantidad": 0,
 						"activo": true,
-						"cantidad": 0
+						"nombre": "officia nostrud",
+						"precio": 30933,
+						"id": 4
 					},
 					{
-						"id": 100127,
-						"precio": 17862,
-						"nombre": "pariatur veniam",
+						"cantidad": 0,
 						"activo": true,
-						"cantidad": 0
+						"nombre": "ea ut",
+						"precio": 23379,
+						"id": 5
 					},
 					{
-						"id": 100128,
-						"precio": 6258,
-						"nombre": "ullamco incididunt",
+						"cantidad": 0,
 						"activo": true,
-						"cantidad": 0
+						"nombre": "veniam occaecat",
+						"precio": 31297,
+						"id": 6
 					},
 					{
-						"id": 100129,
-						"precio": 6448,
-						"nombre": "aliqua aliquip",
+						"cantidad": 0,
 						"activo": true,
-						"cantidad": 0
+						"nombre": "tempor cupidatat",
+						"precio": 43244,
+						"id": 7
 					},
 					{
-						"id": 100130,
-						"precio": 10175,
-						"nombre": "aliqua consequat",
+						"cantidad": 0,
 						"activo": true,
-						"cantidad": 0
+						"nombre": "sunt enim",
+						"precio": 27122,
+						"id": 8
 					},
 					{
-						"id": 100131,
-						"precio": 11917,
-						"nombre": "quis labore",
+						"cantidad": 0,
 						"activo": true,
-						"cantidad": 0
+						"nombre": "et non",
+						"precio": 12733,
+						"id": 9
 					},
 					{
-						"id": 100132,
-						"precio": 17441,
-						"nombre": "amet exercitation",
+						"cantidad": 0,
 						"activo": true,
-						"cantidad": 0
+						"nombre": "consectetur ullamco",
+						"precio": 41932,
+						"id": 10
 					},
 					{
-						"id": 100133,
-						"precio": 12700,
-						"nombre": "do ipsum",
+						"cantidad": 0,
 						"activo": true,
-						"cantidad": 0
+						"nombre": "non reprehenderit",
+						"precio": 36876,
+						"id": 11
 					},
 					{
-						"id": 100134,
-						"precio": 9896,
-						"nombre": "ea cupidatat",
+						"cantidad": 0,
 						"activo": true,
-						"cantidad": 0
+						"nombre": "Lorem ad",
+						"precio": 11977,
+						"id": 12
 					},
 					{
-						"id": 100135,
-						"precio": 5929,
-						"nombre": "deserunt magna",
+						"cantidad": 0,
 						"activo": true,
-						"cantidad": 0
+						"nombre": "magna minim",
+						"precio": 19992,
+						"id": 13
 					},
 					{
-						"id": 100136,
-						"precio": 7549,
-						"nombre": "consequat officia",
+						"cantidad": 0,
 						"activo": true,
-						"cantidad": 0
+						"nombre": "laboris dolore",
+						"precio": 12862,
+						"id": 14
 					},
 					{
-						"id": 100137,
-						"precio": 13966,
-						"nombre": "mollit voluptate",
+						"cantidad": 0,
 						"activo": true,
-						"cantidad": 0
+						"nombre": "in tempor",
+						"precio": 29284,
+						"id": 15
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "sunt magna",
+						"precio": 25546,
+						"id": 16
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "ullamco fugiat",
+						"precio": 28978,
+						"id": 17
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "consequat exercitation",
+						"precio": 23955,
+						"id": 18
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "consectetur labore",
+						"precio": 46835,
+						"id": 19
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "ipsum est",
+						"precio": 33137,
+						"id": 20
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "Lorem velit",
+						"precio": 38857,
+						"id": 21
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "enim eu",
+						"precio": 17080,
+						"id": 22
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "minim laborum",
+						"precio": 37513,
+						"id": 23
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "culpa quis",
+						"precio": 39990,
+						"id": 24
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "consectetur incididunt",
+						"precio": 37378,
+						"id": 25
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "dolor irure",
+						"precio": 18419,
+						"id": 26
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "ut velit",
+						"precio": 16650,
+						"id": 27
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "ullamco occaecat",
+						"precio": 22507,
+						"id": 28
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "ullamco occaecat",
+						"precio": 24944,
+						"id": 29
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "dolor pariatur",
+						"precio": 17804,
+						"id": 30
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "exercitation nostrud",
+						"precio": 32706,
+						"id": 31
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "culpa sint",
+						"precio": 42865,
+						"id": 32
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "deserunt minim",
+						"precio": 26326,
+						"id": 33
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "in cillum",
+						"precio": 28118,
+						"id": 34
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "ad eiusmod",
+						"precio": 33653,
+						"id": 35
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "irure nulla",
+						"precio": 35786,
+						"id": 36
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "enim ea",
+						"precio": 30893,
+						"id": 37
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "ea voluptate",
+						"precio": 38200,
+						"id": 38
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "nostrud labore",
+						"precio": 11846,
+						"id": 39
+					},
+					{
+						"cantidad": 0,
+						"activo": true,
+						"nombre": "tempor adipisicing",
+						"precio": 17729,
+						"id": 40
 					}
 				];
 
-				vm.getProductos	= getProductos;
+				vm.getProductos = getProductos;
 
 				function getProductos(usuario) {
 					var deferred = $q.defer();
