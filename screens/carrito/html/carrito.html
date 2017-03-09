@@ -1,4 +1,16 @@
 <div class="carrito">
+	<div class="row nc-padding-vertical">
+		<div class="col-md-4 col-md-offset-1">
+			<div class="form-group">
+				<label for="inputEmail3">
+					Tiendas
+				</label>
+				<select class="form-control" ng-model="cc.currentTienda">
+					<option ng-repeat="tienda in cc.tiendas" ng-value="tienda">{{tienda.codigo}} - {{tienda.nombre}}</option>
+				</select>
+			</div>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-md-1">
 		</div>
@@ -53,8 +65,8 @@
 						ng-class="{'progress-bar-danger': (cc.total > cc.currentTienda.presupuesto_tope)}"
 						aria-valuenow="{{cc.total}}"
 						aria-valuemin="0"
-						aria-valuemax="{{cc.currentTienda.tope}}"
-						style="width: {{cc.porcentaje}}%;">
+						aria-valuemax="{{cc.currentTienda.presupuesto_tope}}"
+						style="width: {{(cc.total / cc.currentTienda.presupuesto_tope) * 100}}%;">
 					</div>
 				</div>
 			</div>

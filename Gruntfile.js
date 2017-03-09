@@ -13,7 +13,8 @@ module.exports = function(grunt) {
 					'styles/shared.css': 'styles/shared.scss',
 					'styles/login.css': 'styles/login.scss',
 					'styles/carrito.css': 'styles/carrito.scss',
-					'styles/productos.css': 'styles/productos.scss'
+					'styles/productos.css': 'styles/productos.scss',
+					'styles/pedidos.css': 'styles/pedidos.scss'
 				}
 			}
 		},

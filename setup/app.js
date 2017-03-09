@@ -16,13 +16,15 @@
 				'../Services/UsuarioService',
 				'../Services/TiendaService',
 				'../Services/ProductoService',
+				'../Services/PedidoService',
 
 				// Controllers
 				'../AppController',
 				'../screens/carrito/js/CarritoController',
 				'../screens/producto/js/ProductoController',
 				'../screens/usuario/js/UsuarioController',
-				'../screens/tienda/js/TiendaController'
+				'../screens/tienda/js/TiendaController',
+				'../screens/pedido/js/PedidoController'
 			],
 			function(
 				ng,
@@ -40,13 +42,15 @@
 				UsuarioService,
 				TiendaService,
 				ProductoService,
+				PedidoService,
 
 				// Controllers
 				AppController,
 				CarritoController,
 				ProductoController,
 				UsuarioController,
-				TiendaController
+				TiendaController,
+				PedidoController
 			) {
 				ng.module('nical', ['ui.router', 'angular-md5', 'ngLodash'])
 
@@ -56,6 +60,7 @@
 					.service(UsuarioService.registeredName, UsuarioService)
 					.service(TiendaService.registeredName, TiendaService)
 					.service(ProductoService.registeredName, ProductoService)
+					.service(PedidoService.registeredName, PedidoService)
 
 					// Controllers
 					.controller(AppController.registeredName, AppController)
@@ -63,6 +68,7 @@
 					.controller(ProductoController.registeredName, ProductoController)
 					.controller(UsuarioController.registeredName, UsuarioController)
 					.controller(TiendaController.registeredName, TiendaController)
+					.controller(PedidoController.registeredName, PedidoController)
 
 					.run(
 						function($rootScope, $location, SessionService, HelperService) {
@@ -115,6 +121,12 @@
 									templateUrl: 'screens/tienda/html/tienda.html',
 									controller: 'TiendaController',
 									controllerAs: 'tc'
+								})
+								.state('pedido', {
+									url: '/pedido',
+									templateUrl: 'screens/pedido/html/pedido.html',
+									controller: 'PedidoController',
+									controllerAs: 'pec'
 								});
 						}
 					);

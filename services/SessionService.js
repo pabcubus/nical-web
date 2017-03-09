@@ -10,65 +10,86 @@
 
 				vm.user = {};
 				vm.logedIn = false;
-				vm.usuarios = [{
+				vm.usuarios = [
+					{
 						"usuario": "pbassil",
-						"tienda": 334,
-						"puede_hacer_pedidos_general": false,
+						"tienda": 333,
+						"rol": {
+							id: 1,
+							nombre: 'admin'
+						},
+						"puede_hacer_pedidos_general": true,
 						"puede_hacer_pedidos": true,
 						"activo": true,
-						"creacion": "23-03-2014",
+						"creacion": "27-12-2014",
 						"password": 1234,
 						"apellido": "Bassil",
 						"nombre": "Pablo",
-						"_id": "58b73bf7938b8fe78f141b42"
+						"_id": "58c0de06319499742c8afdd4"
 					},
 					{
-						"usuario": "jwilliam",
-						"tienda": 344,
+						"usuario": "yprice",
+						"tienda": 347,
+						"rol": {
+							id: 2,
+							nombre: 'operador'
+						},
 						"puede_hacer_pedidos_general": true,
 						"puede_hacer_pedidos": true,
 						"activo": false,
-						"creacion": "15-07-2014",
+						"creacion": "31-05-2015",
 						"password": 1234,
-						"apellido": "William",
-						"nombre": "Jarvis",
-						"_id": "58b73bf7074df861fec109b9"
+						"apellido": "Price",
+						"nombre": "Yesenia",
+						"_id": "58c0de06ac1e03e3fe0007a1"
 					},
 					{
-						"usuario": "lmaddox",
-						"tienda": 346,
-						"puede_hacer_pedidos_general": false,
-						"puede_hacer_pedidos": true,
-						"activo": true,
-						"creacion": "27-06-2014",
-						"password": 1234,
-						"apellido": "Maddox",
-						"nombre": "Lang",
-						"_id": "58b73bf7ca452db75131b345"
-					},
-					{
-						"usuario": "wyork",
-						"tienda": 344,
-						"puede_hacer_pedidos_general": false,
-						"puede_hacer_pedidos": true,
-						"activo": true,
-						"creacion": "30-09-2016",
-						"password": 1234,
-						"apellido": "York",
-						"nombre": "Watkins",
-						"_id": "58b73bf7dd27279db0ff6118"
-					},
-					{
-						"usuario": "gayala",
+						"usuario": "cblanchard",
 						"tienda": 333,
+						"rol": {
+							id: 2,
+							nombre: 'operador'
+						},
 						"puede_hacer_pedidos_general": false,
 						"puede_hacer_pedidos": true,
 						"activo": true,
-						"creacion": "06-10-2015",
+						"creacion": "07-08-2014",
 						"password": 1234,
-						"apellido": "Ayala",
-						"nombre": "Georgia",
-						"_id": "58b73bf78e2a3c16323da2c0"
+						"apellido": "Blanchard",
+						"nombre": "Charlotte",
+						"_id": "58c0de060a76c64d1b0d369b"
+					},
+					{
+						"usuario": "vfranco",
+						"tienda": 343,
+						"rol": {
+							id: 2,
+							nombre: 'operador'
+						},
+						"puede_hacer_pedidos_general": false,
+						"puede_hacer_pedidos": true,
+						"activo": false,
+						"creacion": "02-05-2014",
+						"password": 1234,
+						"apellido": "Franco",
+						"nombre": "Villarreal",
+						"_id": "58c0de067449d2c258774aa7"
+					},
+					{
+						"usuario": "thansen",
+						"tienda": 341,
+						"rol": {
+							id: 2,
+							nombre: 'operador'
+						},
+						"puede_hacer_pedidos_general": true,
+						"puede_hacer_pedidos": true,
+						"activo": true,
+						"creacion": "06-03-2016",
+						"password": 1234,
+						"apellido": "Hansen",
+						"nombre": "Tyson",
+						"_id": "58c0de0626f150ec6c420814"
 					}
 				];
 

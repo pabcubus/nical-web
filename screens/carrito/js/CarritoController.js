@@ -30,13 +30,13 @@
 						TiendaService.getTiendas()
 							.then(function(res){
 								vm.tiendas = res;
-								vm.currentTienda = angular.copy(vm.tiendas[0]);
+								vm.currentTienda = vm.tiendas[0];
 							});
 					} else {
 						TiendaService.getTiendasByCodigo(user.tienda.toString())
 							.then(function(res){
 								vm.tiendas = res;
-								vm.currentTienda = angular.copy(vm.tiendas[0]);
+								vm.currentTienda = vm.tiendas[0];
 							});
 					}
 				}
@@ -56,15 +56,12 @@
 					});
 
 					vm.total = valorTotal;
-
-					vm.porcentaje	= (vm.total / vm.currentTienda.presupuesto_tope) * 100;
 				}
 
 				function limpiarCarrito(){
 					var r = confirm('Seguro que desea limpiar el carrito?');
 					if (r === true) {
 						vm.total			= 0;
-						vm.porcentaje		= 0;
 						vm.currentProductos = [];
 
 						lodash.forEach(vm.productos, function(prod){
