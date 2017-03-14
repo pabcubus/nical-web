@@ -8,7 +8,7 @@
 			var AppController = function($scope, $rootScope, $location, SessionService){
 				var vm				= this;
 
-				vm.user				= {username: '', password: ''};
+				vm.user				= {usuario: '', password: ''};
 				vm.currentPath		= '';
 				vm.logedIn			= false;
 				vm.loginError		= {
@@ -40,8 +40,8 @@
 				}
 
 				function login(){
-					if(vm.user.username && vm.user.password){
-						SessionService.login(vm.user.username, vm.user.password)
+					if(vm.user.usuario && vm.user.password){
+						SessionService.login(vm.user.usuario, vm.user.password)
 							.then(function(user){
 								vm.user		= user;
 								vm.logedIn 	= true;
@@ -53,14 +53,14 @@
 								setLoginError(true, data.message);
 							});
 					} else {
-						setLoginError(true, 'Username and password is required');
+						setLoginError(true, 'Usuario y contraseña son requeridos');
 					}
 				}
 
 				function logout(){
 					SessionService.logout();
 
-					vm.user		= {username: '', password: ''};
+					vm.user		= {usuario: '', password: ''};
 					vm.logedIn	= false;
 					setLoginError(false, '');
 

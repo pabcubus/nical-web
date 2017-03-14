@@ -15,6 +15,8 @@
 						<th>Usuario</th>
 						<th>Nombre</th>
 						<th>Apellido</th>
+						<th>Tienda Asignada</th>
+						<th>Email</th>
 						<th>Creacion</th>
 						<th>Activo</th>
 						<th></th>
@@ -26,6 +28,8 @@
 						<td>{{user.usuario}}</td>
 						<td>{{user.nombre}}</td>
 						<td>{{user.apellido}}</td>
+						<td>{{user.tienda}}</td>
+						<td>{{user.email}}</td>
 						<td>{{user.creacion}}</td>
 						<td>{{user.activo ? 'Si' : 'No'}}</td>
 						<td>
@@ -59,12 +63,22 @@
 							<input type="text" class="form-control" id="useruser" placeholder="Usuario" ng-model="uc.currentUsuario.usuario">
 						</div>
 						<div class="form-group">
+							<label for="usernombre">Tienda Asignada</label>
+							<select class="form-control" ng-model="uc.currentUsuario.tienda">
+								<option ng-repeat="tienda in uc.tiendas" ng-value="tienda.codigo">{{tienda.codigo}} - {{tienda.nombre}}</option>
+							</select>
+						</div>
+						<div class="form-group">
 							<label for="usernombre">Nombre</label>
 							<input type="text" class="form-control" id="usernombre" placeholder="Nombre" ng-model="uc.currentUsuario.nombre">
 						</div>
 						<div class="form-group">
 							<label for="userapellido">Apellido</label>
 							<input type="text" class="form-control" id="userapellido" placeholder="Apellido" ng-model="uc.currentUsuario.apellido">
+						</div>
+						<div class="form-group">
+							<label for="userapellido">Email</label>
+							<input type="text" class="form-control" id="userapellido" placeholder="e-mail" ng-model="uc.currentUsuario.email">
 						</div>
 						<div class="checkbox">
 							<label>

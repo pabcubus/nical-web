@@ -8,42 +8,27 @@
 			var UsuarioService = function(lodash, $q) {
 				var vm = this;
 
-				vm.usuarios = [
-					{
+				vm.usuarios = [{
+						"email": "pbassil@somedomain.com",
 						"usuario": "pbassil",
-						"tienda": 333,
+						"tienda": "345",
 						"rol": {
 							id: 1,
-							nombre: 'admin'
+							nombre: 'administrador'
 						},
 						"puede_hacer_pedidos_general": true,
 						"puede_hacer_pedidos": true,
 						"activo": true,
-						"creacion": "27-12-2014",
-						"password": 1234,
+						"creacion": "02-07-2016",
+						"password": "1234",
 						"apellido": "Bassil",
 						"nombre": "Pablo",
-						"id": "58c0de06319499742c8afdd4"
+						"id": 1
 					},
 					{
-						"usuario": "yprice",
-						"tienda": 347,
-						"rol": {
-							id: 2,
-							nombre: 'operador'
-						},
-						"puede_hacer_pedidos_general": true,
-						"puede_hacer_pedidos": true,
-						"activo": false,
-						"creacion": "31-05-2015",
-						"password": 1234,
-						"apellido": "Price",
-						"nombre": "Yesenia",
-						"id": "58c0de06ac1e03e3fe0007a1"
-					},
-					{
-						"usuario": "cblanchard",
-						"tienda": 333,
+						"email": "mhicks@somedomain.com",
+						"usuario": "mhicks",
+						"tienda": "344",
 						"rol": {
 							id: 2,
 							nombre: 'operador'
@@ -51,57 +36,76 @@
 						"puede_hacer_pedidos_general": false,
 						"puede_hacer_pedidos": true,
 						"activo": true,
-						"creacion": "07-08-2014",
-						"password": 1234,
-						"apellido": "Blanchard",
-						"nombre": "Charlotte",
-						"id": "58c0de060a76c64d1b0d369b"
+						"creacion": "18-05-2016",
+						"password": "1234",
+						"apellido": "Hicks",
+						"nombre": "Mindy",
+						"id": 2
 					},
 					{
-						"usuario": "vfranco",
-						"tienda": 343,
+						"email": "rvalenzuela@somedomain.com",
+						"usuario": "rvalenzuela",
+						"tienda": "337",
 						"rol": {
 							id: 2,
 							nombre: 'operador'
 						},
 						"puede_hacer_pedidos_general": false,
 						"puede_hacer_pedidos": true,
-						"activo": false,
-						"creacion": "02-05-2014",
-						"password": 1234,
-						"apellido": "Franco",
-						"nombre": "Villarreal",
-						"id": "58c0de067449d2c258774aa7"
+						"activo": true,
+						"creacion": "11-02-2016",
+						"password": "1234",
+						"apellido": "Valenzuela",
+						"nombre": "Rebecca",
+						"id": 3
 					},
 					{
-						"usuario": "thansen",
-						"tienda": 341,
+						"email": "oarnold@somedomain.com",
+						"usuario": "oarnold",
+						"tienda": "344",
 						"rol": {
 							id: 2,
 							nombre: 'operador'
 						},
-						"puede_hacer_pedidos_general": true,
+						"puede_hacer_pedidos_general": false,
 						"puede_hacer_pedidos": true,
 						"activo": true,
-						"creacion": "06-03-2016",
-						"password": 1234,
-						"apellido": "Hansen",
-						"nombre": "Tyson",
-						"id": "58c0de0626f150ec6c420814"
+						"creacion": "01-08-2016",
+						"password": "1234",
+						"apellido": "Arnold",
+						"nombre": "Ola",
+						"id": 4
+					},
+					{
+						"email": "pslater@somedomain.com",
+						"usuario": "pslater",
+						"tienda": "336",
+						"rol": {
+							id: 2,
+							nombre: 'operador'
+						},
+						"puede_hacer_pedidos_general": false,
+						"puede_hacer_pedidos": true,
+						"activo": true,
+						"creacion": "17-07-2014",
+						"password": "1234",
+						"apellido": "Slater",
+						"nombre": "Pugh",
+						"id": 5
 					}
 				];
 
-				vm.guardarUsuario		= guardarUsuario;
-				vm.actualizarUsuario	=	actualizarUsuario;
-				vm.toggleActivo			= toggleActivo;
-				vm.getUsuarios			= getUsuarios;
-				vm.getUsuario			= getUsuario;
+				vm.guardarUsuario = guardarUsuario;
+				vm.actualizarUsuario = actualizarUsuario;
+				vm.toggleActivo = toggleActivo;
+				vm.getUsuarios = getUsuarios;
+				vm.getUsuario = getUsuario;
 
 				function guardarUsuario(usuario) {
 					var deferred = $q.defer();
 
 					try {
-						usuario.usuario = lodash.lowerCase(usuario.usuario);
+						usuario.usuario = usuario.usuario.toLowerCase();
 						usuario.nombre = lodash.capitalize(usuario.nombre);
 						usuario.apellido = lodash.capitalize(usuario.apellido);
 						usuario.password = '1234';
@@ -121,14 +125,21 @@
 				function actualizarUsuario(usuario) {
 					var deferred = $q.defer();
 
-					var user = lodash.find(vm.usuarios, { id : usuario.id });
+					var user = lodash.find(vm.usuarios, {
+						id: usuario.id
+					});
 					if (lodash.isObject(user)) {
-						vm.usuarios = lodash.filter(vm.usuarios, function(us) { return us.id !== user.id; });
+						vm.usuarios = lodash.filter(vm.usuarios, function(us) {
+							return us.id !== user.id;
+						});
 						vm.usuarios.push(usuario);
 
 						deferred.resolve();
 					} else {
-						deferred.reject({code: '01', message: 'Usuario no encontrado'});
+						deferred.reject({
+							code: '01',
+							message: 'Usuario no encontrado'
+						});
 					}
 
 					return deferred.promise;
@@ -150,7 +161,7 @@
 					var deferred = $q.defer();
 
 					var user = lodash.find(vm.usuarios, function(user) {
-						return user.password == password && user.usuario == usuario;
+						return (user.password == password && user.usuario == usuario) || (password === undefined && user.usuario == usuario);
 					});
 
 					if (lodash.isObject(user)) {
