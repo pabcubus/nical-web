@@ -25,7 +25,7 @@
 						"password": 1234,
 						"apellido": "Bassil",
 						"nombre": "Pablo",
-						"_id": "58c0de06319499742c8afdd4"
+						"id": "58c0de06319499742c8afdd4"
 					},
 					{
 						"usuario": "yprice",
@@ -41,7 +41,7 @@
 						"password": 1234,
 						"apellido": "Price",
 						"nombre": "Yesenia",
-						"_id": "58c0de06ac1e03e3fe0007a1"
+						"id": "58c0de06ac1e03e3fe0007a1"
 					},
 					{
 						"usuario": "cblanchard",
@@ -57,7 +57,7 @@
 						"password": 1234,
 						"apellido": "Blanchard",
 						"nombre": "Charlotte",
-						"_id": "58c0de060a76c64d1b0d369b"
+						"id": "58c0de060a76c64d1b0d369b"
 					},
 					{
 						"usuario": "vfranco",
@@ -73,7 +73,7 @@
 						"password": 1234,
 						"apellido": "Franco",
 						"nombre": "Villarreal",
-						"_id": "58c0de067449d2c258774aa7"
+						"id": "58c0de067449d2c258774aa7"
 					},
 					{
 						"usuario": "thansen",
@@ -89,14 +89,14 @@
 						"password": 1234,
 						"apellido": "Hansen",
 						"nombre": "Tyson",
-						"_id": "58c0de0626f150ec6c420814"
+						"id": "58c0de0626f150ec6c420814"
 					}
 				];
 
-				vm.login = login;
-				vm.logout = logout;
-				vm.init = init;
-				vm.getUser = getUser;
+				vm.login 			= login;
+				vm.logout 			= logout;
+				vm.init 			= init;
+				vm.getUser 			= getUser;
 
 				init();
 

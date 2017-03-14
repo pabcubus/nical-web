@@ -1,0 +1,55 @@
+<div class="pedidos">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="form-group">
+				<label>Usuario</label>
+				<input type="text" class="form-control" ng-model="perc.usuario.usuario" ng-disabled="perc.usuario.rol.id !== 1">
+			</div>
+			<div class="form-group">
+				<label>Nombre</label>
+				<input type="text" class="form-control" ng-model="perc.usuario.nombre" ng-disabled="perc.usuario.rol.id !== 1">
+			</div>
+			<div class="form-group">
+				<label>Apellido</label>
+				<input type="text" class="form-control" ng-model="perc.usuario.apellido" ng-disabled="perc.usuario.rol.id !== 1">
+			</div>
+			<div class="form-group">
+				<label>Creacion</label>
+				<input type="text" class="form-control" ng-model="perc.usuario.creacion" ng-disabled="true">
+			</div>
+			<button type="submit" class="btn btn-primary" ng-if="perc.usuario.rol.id === 1">Guardar</button>
+			<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#cambiar_password">Cambiar Contraseña</button>
+		</div>
+	</div>
+
+	<!-- Modificar el producto -->
+	<div class="modal fade" id="cambiar_password" tabindex="-1" role="dialog" aria-labelledby="cambiar_password">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="nc-capitalize">
+						Cambiar Contraseña
+					</h4>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label>Contraseña Actual</label>
+							<input type="password" class="form-control" ng-model="perc.passActual">
+						</div>
+						<div class="form-group">
+							<label>Contraseña Nueva</label>
+							<input type="password" class="form-control" ng-model="perc.pass1">
+						</div>
+						<div class="form-group">
+							<label>Confirma Contraseña Nueva</label>
+							<input type="password" class="form-control" ng-model="perc.pass2">
+						</div>
+						<button type="submit" class="btn btn-primary btn-sm" ng-click="perc.cambiarPassword()">Editar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -21,10 +21,10 @@
 				<tbody>
 					<tr ng-repeat="prod in pc.productos">
 						<td>{{prod.id}}</td>
-						<td class="nc-capitalize">{{prod.nombre}}</td>
-						<td>{{prod.precio | currency:"$ ":0}}</td>
+						<td class="nc-capitalize nc-break-word">{{prod.nombre}}</td>
+						<td>{{prod.precio | currency:"$":0}}</td>
 						<td>
-							<img class="img-producto" src="/prds/1.jpg" />
+							<img class="img-producto" ng-src="/prds/{{prod.id}}.png" />
 						</td>
 						<td>
 							<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modificar_producto" ng-click="pc.setCurrentProducto(prod)">

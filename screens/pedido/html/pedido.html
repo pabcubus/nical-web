@@ -1,6 +1,39 @@
 <div class="pedidos">
 	<div class="row nc-padding-vertical">
-		<div class="col-md-4 col-md-offset-1">
+		<div class="col-md-2 col-md-offset-1">
+			<div class="form-group">
+				<label>
+					Fecha Inicial
+				</label>
+				<div class='input-group date datetimepicker'>
+					<input type='text' class="form-control" placeholder="Fecha incial..." />
+					<span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar"></span>
+					</span>
+				</div>
+				<button type="button" class="btn btn-primary btn-sm nc-margin-vertical">
+					Filtrar
+				</button>
+				<button type="button" class="btn btn-primary btn-sm nc-margin-vertical">
+					Exportar en XLS
+				</button>
+			</div>
+		</div>
+		<div class="col-md-2">
+			<div class="form-group">
+				<label>
+					Fecha Final
+				</label>
+				<div class='input-group date datetimepicker'>
+					<input type='text' class="form-control" placeholder="Fecha final..." />
+					<span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar"></span>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3 col-md-offset-2">
 			<div class="form-group">
 				<label>
 					Buscar
@@ -25,7 +58,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="ped in pec.pedidos | filter : { id: pec.searchString }">
+					<tr ng-repeat="ped in pec.pedidos | filter : pec.searchString">
 						<td>{{ped.id}}</td>
 						<td>{{ped.tienda}}</td>
 						<td>{{ped.creado}}</td>

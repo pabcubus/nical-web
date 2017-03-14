@@ -24,7 +24,8 @@
 				'../screens/producto/js/ProductoController',
 				'../screens/usuario/js/UsuarioController',
 				'../screens/tienda/js/TiendaController',
-				'../screens/pedido/js/PedidoController'
+				'../screens/pedido/js/PedidoController',
+				'../screens/perfil/js/PerfilController'
 			],
 			function(
 				ng,
@@ -50,7 +51,8 @@
 				ProductoController,
 				UsuarioController,
 				TiendaController,
-				PedidoController
+				PedidoController,
+				PerfilController
 			) {
 				ng.module('nical', ['ui.router', 'angular-md5', 'ngLodash'])
 
@@ -69,6 +71,7 @@
 					.controller(UsuarioController.registeredName, UsuarioController)
 					.controller(TiendaController.registeredName, TiendaController)
 					.controller(PedidoController.registeredName, PedidoController)
+					.controller(PerfilController.registeredName, PerfilController)
 
 					.run(
 						function($rootScope, $location, SessionService, HelperService) {
@@ -127,6 +130,12 @@
 									templateUrl: 'screens/pedido/html/pedido.html',
 									controller: 'PedidoController',
 									controllerAs: 'pec'
+								})
+								.state('perfil', {
+									url: '/perfil',
+									templateUrl: 'screens/perfil/html/perfil.html',
+									controller: 'PerfilController',
+									controllerAs: 'perc'
 								});
 						}
 					);

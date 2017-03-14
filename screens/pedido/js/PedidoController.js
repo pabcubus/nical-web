@@ -18,6 +18,10 @@
 						.then(function(pedidos){
 							vm.pedidos = pedidos;
 						});
+
+					$('.datetimepicker').datetimepicker({
+						format: 'DD/MM/YYYY'
+					});
 				}
 
 				function toggleActivo(pedido) {

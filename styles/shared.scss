@@ -23,6 +23,10 @@
 	min-height: 630px;
 }
 
+.nc-margin-vertical {
+	margin: 5px 0;
+}
+
 .nc-padding-all {
 	padding: 5px;
 }
@@ -111,7 +115,7 @@
 	text-transform: capitalize;
 }
 
-.cb-break-word {
+.nc-break-word {
 	word-break: break-all;
 	word-wrap: break-word;
 }

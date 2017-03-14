@@ -17,10 +17,19 @@
 				};
 				vm.usuarios				= [];
 
+				vm.toggleActivo			= toggleActivo;
 				vm.guardarUsuario		= guardarUsuario;
 				vm.setCurrentUsuario	= setCurrentUsuario;
 
 				function init(){
+					UsuarioService.getUsuarios()
+						.then(function(data){
+							vm.usuarios	= data;
+						});
+				}
+
+				function toggleActivo(usuario) {
+					UsuarioService.toggleActivo(usuario);
 					UsuarioService.getUsuarios()
 						.then(function(data){
 							vm.usuarios	= data;
