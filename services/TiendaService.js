@@ -3,9 +3,9 @@
 
 	define([],
 		function() {
-			var ngDependencies = ['lodash', '$q'];
+			var ngDependencies = ['lodash', '$q', 'DataService'];
 
-			var TiendaService = function(lodash, $q) {
+			var TiendaService = function(lodash, $q, DataService) {
 				var vm = this;
 
 				vm.tiendas = [
@@ -62,7 +62,13 @@
 				function getTiendas(){
 					var deferred = $q.defer();
 
-					deferred.resolve(vm.tiendas);
+					DataService.performOperation('/api/tienda/', 'GET')
+						.then(function(result){
+							deferred.resolve(result.data);
+						})
+						.catch(function(){
+							deferred.reject({});
+						});
 
 					return deferred.promise;
 				}

@@ -21,15 +21,15 @@
 						"_id": "58b73bf7938b8fe78f141b42"
 					},
 					{
-						"usuario": "jwilliam",
+						"usuario": "cbassil",
 						"tienda": 344,
 						"puede_hacer_pedidos_general": true,
 						"puede_hacer_pedidos": true,
-						"activo": false,
+						"activo": true,
 						"creacion": "15-07-2014",
 						"password": 1234,
-						"apellido": "William",
-						"nombre": "Jarvis",
+						"apellido": "Bassil",
+						"nombre": "Camilo",
 						"_id": "58b73bf7074df861fec109b9"
 					},
 					{

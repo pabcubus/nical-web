@@ -11,11 +11,13 @@
 				'btdatetimepicker',
 
 				// Services
+				'../Services/DataService',
 				'../Services/HelperService',
 				'../Services/SessionService',
 				'../Services/UsuarioService',
 				'../Services/TiendaService',
 				'../Services/ProductoService',
+				'../Services/CiudadService',
 
 				// Controllers
 				'../AppController',
@@ -35,11 +37,13 @@
 				btdatetimepicker,
 
 				// Services
+				DataService,
 				HelperService,
 				SessionService,
 				UsuarioService,
 				TiendaService,
 				ProductoService,
+				CiudadService,
 
 				// Controllers
 				AppController,
@@ -51,11 +55,13 @@
 				ng.module('nical', ['ui.router', 'angular-md5', 'ngLodash'])
 
 					// Services
+					.service(DataService.registeredName, DataService)
 					.service(HelperService.registeredName, HelperService)
 					.service(SessionService.registeredName, SessionService)
 					.service(UsuarioService.registeredName, UsuarioService)
 					.service(TiendaService.registeredName, TiendaService)
 					.service(ProductoService.registeredName, ProductoService)
+					.service(CiudadService.registeredName, CiudadService)
 
 					// Controllers
 					.controller(AppController.registeredName, AppController)
