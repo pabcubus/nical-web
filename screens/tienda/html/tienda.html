@@ -7,7 +7,7 @@
 				<div class="col-md-3">
 					<div>
 						<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modificar_tienda" ng-click="tc.setCurrentProducto({})">
-							Nuevo Producto
+							Nueva Tienda
 						</button>
 					</div>
 					<div>
@@ -21,15 +21,17 @@
 					<tr>
 						<th>Codigo</th>
 						<th>Nombre</th>
+						<th>Ciudad</th>
 						<th>Presupuesto Global</th>
 						<th>Presupuesto Tope</th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="tienda in tc.tiendas">
+					<tr ng-repeat="tienda in tc.tiendasFiltered">
 						<td>{{tienda.codigo}}</td>
 						<td>{{tienda.nombre}}</td>
+						<td>{{tienda.ciudad.descripcion}}</td>
 						<td>{{tienda.presupuesto_global | currency:"$ ":0}}</td>
 						<td>{{tienda.presupuesto_tope | currency:"$ ":0}}</td>
 						<td>
@@ -64,6 +66,12 @@
 						<div class="form-group">
 							<label for="tiendanombre">Nombre</label>
 							<input type="text" class="form-control" id="tiendanombre" placeholder="Nombre" ng-model="tc.currentTienda.nombre">
+						</div>
+						<div class="form-group">
+							<label for="tiendapretope">Ciudad</label>
+							<select class="form-control" ng-model="tc.currentTienda.ciudadId">
+								<option ng-repeat="ciudad in tc.ciudades" ng-value="ciudad.id">{{ciudad.descripcion}}</option>
+							</select>
 						</div>
 						<div class="form-group">
 							<label for="tiendapretope">Presupuesto Tope</label>

@@ -3,9 +3,9 @@
 
 	define([],
 		function() {
-			var ngDependencies = ['$scope', 'lodash', 'TiendaService'];
+			var ngDependencies = ['$scope', 'lodash', 'TiendaService', 'CiudadService'];
 
-			var TiendaController = function($scope, lodash, TiendaService) {
+			var TiendaController = function($scope, lodash, TiendaService, CiudadService) {
 				var vm = this;
 
 				vm.searchTiendaTerm = '';
@@ -15,7 +15,9 @@
 					presupuesto_global: 0,
 					presupuesto_tope: 0
 				};
+				vm.ciudades = [];
 				vm.tiendas = [];
+				vm.tiendasFiltered = [];
 
 				vm.getTiendasByCodigo = getTiendasByCodigo;
 				vm.setCurrentTienda = setCurrentTienda;
@@ -32,11 +34,27 @@
 					}
 				);
 
-				function getTiendasByCodigo(codigo) {
-					TiendaService.getTiendasByCodigo(codigo)
+				function init(codigo) {
+					TiendaService.getTiendas()
 						.then(function(data) {
 							vm.tiendas = data;
 						});
+
+					CiudadService.getCiudades()
+						.then(function(data) {
+							vm.ciudades = data;
+						});
+				}
+
+				function getTiendasByCodigo(codigo) {
+					if (!lodash.isString(codigo) || codigo.trim().length < 1) {
+						vm.tiendasFiltered = [];
+						return;
+					}
+
+					vm.tiendasFiltered = lodash.filter(vm.tiendas, function(tienda){
+						return tienda.id.toString().indexOf(codigo) != -1;
+					});
 				}
 
 				function setCurrentTienda(currentTienda) {
@@ -51,6 +69,10 @@
 					}
 					$('#modificar_tienda').modal('hide');
 				}
+
+				$scope.$on('$viewContentLoaded', function(){
+					init();
+				});
 			};
 
 			TiendaController.$inject = ngDependencies;
