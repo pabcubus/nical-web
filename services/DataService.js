@@ -3,9 +3,9 @@
 
 	define([],
 		function() {
-			var ngDependencies = ['$q', '$http'];
+			var ngDependencies = ['lodash', '$q', '$http'];
 
-			var DataService = function($q, $http) {
+			var DataService = function(lodash, $q, $http) {
 				var vm = this;
 
 				vm.performOperation = performOperation;
@@ -24,7 +24,10 @@
 							function successCallback(response) {
 								deferred.resolve(response);
 							}, function errorCallback(response) {
-								deferred.reject({status: response.status});
+								deferred.reject({
+									status: response.status,
+									message: lodash.has(response.data, 'message') ? response.data.message : 'Error. Intente mas tarde.'
+								});
 							}
 						);
 

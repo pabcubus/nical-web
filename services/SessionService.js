@@ -49,10 +49,10 @@
 								});
 							}
 						})
-						.catch(function(){
+						.catch(function(data){
 							deferred.reject({
-								code: '01',
-								message: 'Problemas con la web. Intenta mas tarde.'
+								code: data.code,
+								message: data.message
 							});
 						});
 

@@ -26,17 +26,17 @@
 
 					var user = SessionService.getUser();
 
-					if (user.puede_hacer_pedidos_general) {
+					if (user.rol.id == 1) {
 						TiendaService.getTiendas()
 							.then(function(res){
 								vm.tiendas = res;
 								vm.currentTienda = vm.tiendas[0];
 							});
 					} else {
-						TiendaService.getTiendasByCodigo(user.tienda.toString())
+						TiendaService.getTienda(user.tienda.id.toString())
 							.then(function(res){
-								vm.tiendas = res;
-								vm.currentTienda = vm.tiendas[0];
+								vm.tiendas = [res];
+								vm.currentTienda = res;
 							});
 					}
 				}

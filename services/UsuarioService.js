@@ -3,9 +3,9 @@
 
 	define(['moment'],
 		function(moment) {
-			var ngDependencies = ['lodash', '$q'];
+			var ngDependencies = ['lodash', '$q', 'DataService'];
 
-			var UsuarioService = function(lodash, $q) {
+			var UsuarioService = function(lodash, $q, DataService) {
 				var vm = this;
 
 				vm.usuarios = [{
@@ -160,18 +160,18 @@
 				function getUsuario(usuario, password) {
 					var deferred = $q.defer();
 
-					var user = lodash.find(vm.usuarios, function(user) {
-						return (user.password == password && user.usuario == usuario) || (password === undefined && user.usuario == usuario);
-					});
+					DataService.performOperation('/api/usuario/' + usuario, 'GET')
+						.then(function(result){
+							var user = result.data;
 
-					if (lodash.isObject(user)) {
-						deferred.resolve(user);
-					} else {
-						deferred.reject({
-							codigo: '01',
-							message: 'Usuario no existente'
+							deferred.resolve(user);
+						})
+						.catch(function(data){
+							deferred.reject({
+								code: data.status == -1 ? '02' : '01',
+								message: data.message
+							});
 						});
-					}
 
 					return deferred.promise;
 				}
