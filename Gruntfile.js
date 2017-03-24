@@ -14,7 +14,8 @@ module.exports = function(grunt) {
 					'styles/login.css': 'styles/login.scss',
 					'styles/carrito.css': 'styles/carrito.scss',
 					'styles/productos.css': 'styles/productos.scss',
-					'styles/pedidos.css': 'styles/pedidos.scss'
+					'styles/pedidos.css': 'styles/pedidos.scss',
+					'styles/toolbar.css': 'styles/toolbar.scss'
 				}
 			}
 		},

@@ -98,6 +98,7 @@
 				vm.guardarUsuario = guardarUsuario;
 				vm.actualizarUsuario = actualizarUsuario;
 				vm.toggleActivo = toggleActivo;
+				vm.getRoles = getRoles;
 				vm.getUsuarios = getUsuarios;
 				vm.getUsuario = getUsuario;
 
@@ -149,10 +150,34 @@
 					usuario.activo = !usuario.activo;
 				}
 
+				function getRoles() {
+					var deferred = $q.defer();
+
+					DataService.performOperation('/api/rol', 'GET')
+						.then(function(result){
+							var roles = result.data;
+
+							deferred.resolve(roles);
+						})
+						.catch(function(data){
+							deferred.resolve([]);
+						});
+
+					return deferred.promise;
+				}
+
 				function getUsuarios() {
 					var deferred = $q.defer();
 
-					deferred.resolve(vm.usuarios);
+					DataService.performOperation('/api/usuario', 'GET')
+						.then(function(result){
+							var users = result.data;
+
+							deferred.resolve(users);
+						})
+						.catch(function(data){
+							deferred.resolve([]);
+						});
 
 					return deferred.promise;
 				}

@@ -20,6 +20,7 @@
 
 				vm.usuarios				= [];
 				vm.tiendas				= [];
+				vm.roles				= [];
 
 				vm.toggleActivo			= toggleActivo;
 				vm.guardarUsuario		= guardarUsuario;
@@ -28,6 +29,7 @@
 				function init(){
 					cargarUsuarios();
 					cargarTiendas();
+					cargarRoles();
 				}
 
 				function toggleActivo(usuario) {
@@ -63,6 +65,13 @@
 					TiendaService.getTiendas()
 						.then(function(tiendas){
 							vm.tiendas	= tiendas;
+						});
+				}
+
+				function cargarRoles(){
+					UsuarioService.getRoles()
+						.then(function(roles){
+							vm.roles	= roles;
 						});
 				}
 

@@ -1,0 +1,11 @@
+@import 'colors.scss';
+
+.nc-toolbar {
+	.dropdown-menu {
+		li {
+			a {
+				text-transform: capitalize;
+			}
+		}
+	}
+}

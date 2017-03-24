@@ -80,17 +80,33 @@
 					.controller(PerfilController.registeredName, PerfilController)
 
 					.run(
-						function($rootScope, $location, SessionService, HelperService) {
+						function(lodash, $rootScope, $location, SessionService, HelperService) {
 							$rootScope.$on('$locationChangeSuccess', function(event, next, current) {
+								var state = '';
+
 								if (SessionService.logedIn) {
 									var path	= $location.path();
+									/*
 									var valid	= HelperService.string.checkStringRegex(path, /^(\/(\w|\?|\&)+)+$/i);
-									var url		= valid && (path != '/login') ? path : '/carrito';
 
-									$location.path( url );
+									if (valid) {*/
+										var filteredPages = lodash.filter(SessionService.user.rol.permisos, function(per){
+											return per.pagina.nombre == path.substring(1, path.length) && per.pagina.activo;
+										});
+
+										if (filteredPages.length > 0){
+											state = path;
+										} else {
+											state = '/carrito';
+										}/*
+									} else {
+										state = '/carrito';
+									}*/
 								} else {
-									$location.path('/login');
+									state = '/login';
 								}
+
+								$location.path( state );
 
 								$rootScope.$broadcast('SET_NICAL_SESSION_DATA', {
 									'user':		SessionService.user,
