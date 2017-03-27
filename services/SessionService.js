@@ -3,9 +3,9 @@
 
 	define([],
 		function() {
-			var ngDependencies = ['lodash', '$q', 'HelperService', 'UsuarioService'];
+			var ngDependencies = ['md5', 'lodash', '$q', 'HelperService', 'UsuarioService'];
 
-			var SessionService = function(lodash, $q, HelperService, UsuarioService) {
+			var SessionService = function(md5, lodash, $q, HelperService, UsuarioService) {
 				var vm = this;
 
 				vm.user = {};
@@ -24,7 +24,7 @@
 					UsuarioService.getUsuario(vm.user.usuario)
 						.then(function(user){
 							if (lodash.isObject(user)) {
-								if (user.password == password) {
+								if (user.password == md5.createHash(password)) {
 									if (user.activo) {
 										HelperService.storage.set(HelperService.constants.LOCALSTORAGE_USER_TAG, user, true);
 										vm.logedIn = true;

@@ -15,6 +15,7 @@
 						<th>Usuario</th>
 						<th>Nombre</th>
 						<th>Apellido</th>
+						<th>Rol</th>
 						<th>Tienda Asignada</th>
 						<th>Email</th>
 						<th>Creacion</th>
@@ -28,6 +29,7 @@
 						<td>{{user.username}}</td>
 						<td>{{user.nombre}}</td>
 						<td>{{user.apellido}}</td>
+						<td>{{user.rol.nombre}}</td>
 						<td>{{user.tienda.nombre}}</td>
 						<td>{{user.email}}</td>
 						<td>{{user.creado}}</td>
@@ -53,25 +55,25 @@
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="nc-capitalize">
-						{{uc.currentUsuario.nombre}} {{uc.currentUsuario.apellido}} <small>{{uc.currentUsuario.usuario}}</small>
+						{{uc.currentUsuario.nombre}} {{uc.currentUsuario.apellido}} <small>{{uc.currentUsuario.username}}</small>
 					</h4>
 				</div>
 				<div class="modal-body">
 					<form>
 						<div class="form-group">
 							<label for="useruser">Usuario</label>
-							<input type="text" class="form-control" id="useruser" placeholder="Usuario" ng-model="uc.currentUsuario.usuario">
+							<input type="text" class="form-control" id="useruser" placeholder="Usuario" ng-model="uc.currentUsuario.username">
 						</div>
 						<div class="form-group">
 							<label for="usernombre">Tienda Asignada</label>
-							<select class="form-control" ng-model="uc.currentUsuario.tienda">
-								<option ng-repeat="tienda in uc.tiendas" ng-value="tienda">{{tienda.codigo}} - {{tienda.nombre}}</option>
+							<select class="form-control" ng-model="uc.currentUsuario.tiendaId">
+								<option ng-repeat="tienda in uc.tiendas" ng-value="tienda.id">{{tienda.codigo}} - {{tienda.nombre}}</option>
 							</select>
 						</div>
 						<div class="form-group">
 							<label for="usernombre">Rol</label>
-							<select class="form-control" ng-model="uc.currentUsuario.rol">
-								<option ng-repeat="rol in uc.roles" ng-value="rol">{{rol.nombre}}</option>
+							<select class="form-control" ng-model="uc.currentUsuario.rolId">
+								<option ng-repeat="rol in uc.roles" ng-value="rol.id">{{rol.nombre}}</option>
 							</select>
 						</div>
 						<div class="form-group">
@@ -84,19 +86,12 @@
 						</div>
 						<div class="form-group">
 							<label for="userapellido">Email</label>
-							<input type="text" class="form-control" id="userapellido" placeholder="e-mail" ng-model="uc.currentUsuario.email">
+							<input type="email" class="form-control" id="userapellido" placeholder="e-mail" ng-model="uc.currentUsuario.email">
 						</div>
-						<div class="checkbox">
-							<label>
-								<input type="checkbox" ng-model="uc.currentUsuario.puede_hacer_pedidos"> Puede hacer pedidos
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-								<input type="checkbox" ng-model="uc.currentUsuario.puede_hacer_pedidos_general"> Puede hacer pedidos generales
-							</label>
-						</div>
-						<button type="submit" class="btn btn-primary btn-sm" ng-click="uc.guardarUsuario()">Editar</button>
+
+						<button type="submit" class="btn btn-primary btn-sm" ng-click="uc.guardarUsuario()">
+							{{uc.editUsuario ? 'Editar' : 'Guardar'}}
+						</button>
 					</form>
 				</div>
 			</div>

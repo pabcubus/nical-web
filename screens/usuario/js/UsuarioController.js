@@ -33,23 +33,42 @@
 				}
 
 				function toggleActivo(usuario) {
-					UsuarioService.toggleActivo(usuario);
-					UsuarioService.getUsuarios()
-						.then(function(data){
-							vm.usuarios	= data;
-						});
+					UsuarioService.toggleActivo(usuario)
+						.then(function(){
+							cargarUsuarios();
+						})
+						.catch(function(data){
+							alert(data.message);
+						})
+						.finally();
 				}
 
 				function guardarUsuario(){
 					if (vm.editUsuario) {
 						UsuarioService.actualizarUsuario(vm.currentUsuario)
 							.then(function(data){
-								init();
+								$('#modificar_usuario')
+									.modal('hide')
+										.on('hidden.bs.modal', function (e) {
+											cargarUsuarios();
+											alert('Usuario Actualizado');
+										});
+							})
+							.catch(function(data){
+								alert(data.message);
 							});
 					} else {
 						UsuarioService.guardarUsuario(vm.currentUsuario)
 							.then(function(data){
-								init();
+								$('#modificar_usuario')
+									.modal('hide')
+										.on('hidden.bs.modal', function (e) {
+											cargarUsuarios();
+											alert('Usuario Creado');
+										});
+							})
+							.catch(function(data){
+								alert(data.message);
 							});
 					}
 				}
